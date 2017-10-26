@@ -42,20 +42,21 @@ func (mgr *UserManager) GetUsers() ([]*User, error) {
 	}
 	return users, nil
 }
-func (mgr *UserManager) GetUsersById(id string) (*User, error) {
+func (mgr *UserManager) GetUsersById(id string) (*[]User, error) {
 	orm.Debug = true
 	o := orm.NewOrm()
-	id2:=orm.StrTo(id)
-	key,err2:=id2.Int()
-	if err2!=nil{
-		return nil,err2
-	}
+	//id2:=orm.StrTo(id)
+	//key,err2:=id2.Int()
+	//if err2!=nil{
+	//	return nil,err2
+	//}
 	//var users =new(User)
 	//users.Id=key
 	//err:=o.Read(users)
-	var user *User
-	err := o.QueryTable("user").Filter("id",key).One(user)
-	//err:=o.Raw("select * from user where id = ?",key).QueryRow(user)
+	user:=new([]User)
+	_,err:=o.QueryTable("user").Filter("Id",id).All(user)
+	//err := o.QueryTable("user").Filter("id",key).One(user)
+	//err:=o.Raw("select * from user where Id = ?",id).QueryRow(user)
 	if err != nil {
 		fmt.Println(err)
 		return nil, err

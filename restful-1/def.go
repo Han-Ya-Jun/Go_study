@@ -15,7 +15,7 @@ type DBConfig struct {
 	MaxOpenConns int
 }
 type User struct {
-	Id       int    `json:"id" orm:"column(id),size(11)"`
+	Id       int    `json:"id" pk:"auto" orm:"column(id)"`
 	Username string `json:"username" orm:"column(username)"`
 	Password string `json:"password" orm:"column(password)"`
 	Sex      string `json:"sex" orm:"column(sex)"`
