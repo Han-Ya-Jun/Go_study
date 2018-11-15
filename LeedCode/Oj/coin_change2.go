@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 /*
 * @Author:hanyajun
@@ -9,6 +12,9 @@ import "fmt"
 * @Function:
  */
 func main() {
+	m := time.Now()
+	t := m.Add(-time.Second * time.Duration(m.Second())).Add(-time.Duration(m.Nanosecond()) * time.Nanosecond)
+	fmt.Printf("%v", t)
 	a := []int{5, 10}
 	fmt.Println(coinChange2(a, 15))
 }

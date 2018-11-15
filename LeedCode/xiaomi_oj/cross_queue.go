@@ -14,7 +14,7 @@ import (
 * @Function:动态规划解决交叉队列问题
  */
 
-func solution(line string) string {
+func solution6(line string) string {
 	// 在此处理单行数据
 	strArray := strings.Split(line, ",")
 	if len(strArray[0])+len(strArray[1]) != len(strArray[2]) {
@@ -30,12 +30,12 @@ func solution(line string) string {
 
 	intArray[0][0] = 1
 	// 返回处理后的结果
-	return
+	return ""
 }
 
 func main() {
 	r := bufio.NewReaderSize(os.Stdin, 20480)
 	for line, _, err := r.ReadLine(); err == nil; line, _, err = r.ReadLine() {
-		fmt.Println(solution(string(line)))
+		fmt.Println(solution6(string(line)))
 	}
 }
