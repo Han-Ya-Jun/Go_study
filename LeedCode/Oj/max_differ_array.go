@@ -7,7 +7,7 @@ package main
 * @Function:
  */
 func main() {
-	a := []int{1, -2, 3, 6, 8}
+	a := []int{-10, -2, 3, 6, 8, -13}
 	println(GetMaxDifferArray(a))
 }
 
