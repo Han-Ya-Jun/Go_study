@@ -18,6 +18,6 @@ func main() {
 		fmt.Println(environ[i])
 	}
 	fmt.Println("**************************")
-	goPath := os.Getenv("GOPATH")
+	goPath := os.Getenv("NOTICE_MAIL_HOST")
 	fmt.Printf("GOPATH is %s\n", goPath)
 }
