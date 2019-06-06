@@ -16,7 +16,7 @@ func main() {
 	m.SetHeader("Cc", "1581532052@qq.com", "hanyajun5876@163.com")
 	m.SetHeader("Subject", "Hello!")
 	m.SetBody("text/html", "123")
-	d := gomail.NewDialer("smtp.qq.com", 25, "1581532052@qq.com", "vwhfadvqlqwlgcdh")
+	d := gomail.NewDialer("smtp.qq.com", 25, "1581532052@qq.com", "")
 	if err := d.DialAndSend(m); err != nil {
 		panic(err)
 	}
