@@ -5,7 +5,7 @@ import "fmt"
 /*
 * @Author:hanyajun
 * @Date:2018/3/29 下午1:29
-* @Name:Go_study: 
+* @Name:Go_study:
 * @Function:
  */
 func main() {

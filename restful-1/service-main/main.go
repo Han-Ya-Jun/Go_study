@@ -4,11 +4,12 @@ package main
  *CreateBy 01305155
  *Date:10:39
  *Description:
-*/
+ */
 import (
-	"flag"
 	svc "Go_study/restful-1"
+	"flag"
 )
+
 var (
 	ArgLogLevel      = flag.Int("verbose", 6, "log level")
 	ArgMysqlHost     = flag.String("mysqlhost", "localhost", "mysql host")
@@ -18,6 +19,7 @@ var (
 	ArgMysqlPassword = flag.String("mysqlpassword", "123", "mysql password")
 	ArgServerPort    = flag.String("serverport", "8080", "server port")
 )
+
 func main() {
 	flag.Parse()
 	dbConf := &svc.DBConfig{

@@ -1,9 +1,9 @@
 package service
 
 import (
-	"github.com/emicklei/go-restful"
-	log "github.com/Sirupsen/logrus"
 	"fmt"
+	log "github.com/Sirupsen/logrus"
+	"github.com/emicklei/go-restful"
 	"net/http"
 )
 
@@ -11,7 +11,7 @@ import (
  *CreateBy 01305155
  *Date:10:43
  *Description:操作数据库
-*/
+ */
 
 type UserService struct {
 	Controller *UserController

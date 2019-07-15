@@ -1,8 +1,8 @@
 package service
 
 import (
-	"github.com/emicklei/go-restful"
 	log "github.com/Sirupsen/logrus"
+	"github.com/emicklei/go-restful"
 	"time"
 )
 
@@ -10,17 +10,16 @@ import (
  *CreateBy 01305155
  *Date:10:56
  *Description::
-*/
+ */
 type UserController struct {
-	WebService  *restful.WebService
-	UserMgr *UserManager
+	WebService *restful.WebService
+	UserMgr    *UserManager
 }
-
 
 func NewUserController(userMgr *UserManager) *UserController {
 	return &UserController{
-		WebService:  new(restful.WebService),
-		UserMgr:userMgr,
+		WebService: new(restful.WebService),
+		UserMgr:    userMgr,
 	}
 }
 func (controller *UserController) Register(container *restful.Container) {
@@ -46,8 +45,8 @@ func (controller *UserController) Register(container *restful.Container) {
 	container.Add(controller.WebService)
 }
 func (controller *UserController) GetUsers(request *restful.Request, response *restful.Response) {
-	user,err:=controller.UserMgr.GetUsers()
-    if err!=nil{
+	user, err := controller.UserMgr.GetUsers()
+	if err != nil {
 		log.Error(err)
 	}
 	controller.responseSuccessWithObj(response, "", user)
@@ -55,8 +54,8 @@ func (controller *UserController) GetUsers(request *restful.Request, response *r
 
 func (controller *UserController) GetUsersById(request *restful.Request, response *restful.Response) {
 	id := request.PathParameter("id")
-	user,err:=controller.UserMgr.GetUsersById(id)
-	if err!=nil{
+	user, err := controller.UserMgr.GetUsersById(id)
+	if err != nil {
 		log.Error(err)
 	}
 	controller.responseSuccessWithObj(response, "", user)

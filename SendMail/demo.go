@@ -25,5 +25,5 @@ func main() {
 	//imagePart, err := email.NewPartAttachment(gopherReader, "gopher.png")
 	//pdfPart := email.NewPartAttachmentFromBytes(docBytes, "documentation.pdf"
 	msg := email.NewMessage(h, text, "")
-	msg.Send("smtp.gmail.com:587", smtp.PlainAuth("", "username@gmail.com", "1234567890", "smtp.gmail.com"))
+	msg.Send("smtp.gmail.com:587", smtp.PlainAuth("", "username@gmail.com", "", "smtp.gmail.com"))
 }

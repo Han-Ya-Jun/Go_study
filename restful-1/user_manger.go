@@ -1,9 +1,9 @@
 package service
 
 import (
-	"github.com/astaxie/beego/orm"
 	"fmt"
 	log "github.com/Sirupsen/logrus"
+	"github.com/astaxie/beego/orm"
 	_ "github.com/go-sql-driver/mysql"
 )
 
@@ -11,13 +11,14 @@ import (
  *CreateBy 01305155
  *Date:10:57
  *Description::
-*/
+ */
 type UserManager struct {
-	DBConf    *DBConfig
+	DBConf *DBConfig
 }
+
 func NewUserManager(dbConf *DBConfig) *UserManager {
 	mgr := &UserManager{
-		DBConf:    dbConf,
+		DBConf: dbConf,
 	}
 	mgr.initDB()
 	return mgr
@@ -53,8 +54,8 @@ func (mgr *UserManager) GetUsersById(id string) (*[]User, error) {
 	//var users =new(User)
 	//users.Id=key
 	//err:=o.Read(users)
-	user:=new([]User)
-	_,err:=o.QueryTable("user").Filter("Id",id).All(user)
+	user := new([]User)
+	_, err := o.QueryTable("user").Filter("Id", id).All(user)
 	//err := o.QueryTable("user").Filter("id",key).One(user)
 	//err:=o.Raw("select * from user where Id = ?",id).QueryRow(user)
 	if err != nil {

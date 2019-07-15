@@ -5,7 +5,7 @@ import "fmt"
 /*
 * @Author:hanyajun
 * @Date:2018/3/29 下午1:25
-* @Name:Go_study: 
+* @Name:Go_study:
 * @Function:slice 去除某个元素（元素不能有重复）
  */
 func main() {
