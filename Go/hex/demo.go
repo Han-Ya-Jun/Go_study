@@ -11,6 +11,6 @@ import "fmt"
 
 func main() {
 	//var a int64
-	s := fmt.Sprintf("%0x", 9223372036854775807)
+	s := fmt.Sprintf("%.4x", 456)
 	fmt.Println(s)
 }
