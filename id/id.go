@@ -23,4 +23,10 @@ func main() {
 
 		fmt.Println("id", id)
 	}
+
+	var x uint64 = 897797896767
+	var y int64 = int64(x)
+	fmt.Println(y)
+	//fmt.Printf("uint64: %v = %#[1]x, int64: %v = %#x\n", x, y, uint64(y))
+
 }
