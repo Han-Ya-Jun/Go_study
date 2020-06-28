@@ -2,8 +2,9 @@ package main
 
 import (
 	"fmt"
-	"github.com/bwmarrin/snowflake"
 	"os"
+
+	"github.com/bwmarrin/snowflake"
 )
 
 /*

@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 /*
 * @Author:hanyajun
@@ -16,4 +18,11 @@ func main() {
 	fmt.Println(s2)
 	s2 = append(s2, 2)
 	fmt.Println(s1)
+	array := []int{2, 4}
+	ChangeSlince(array)
+	fmt.Println(array)
+
+}
+func ChangeSlince(s []int) {
+	s[0] = 24
 }

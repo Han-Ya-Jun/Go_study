@@ -3,8 +3,6 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"strconv"
-	"strings"
 )
 
 /*
@@ -20,7 +18,7 @@ type RequestParam struct {
 	LoadWaybills []IntString `json:"load_waybills"`
 }
 type RequestParams struct {
-	LoadWaybills []int `json:"load_waybills"`
+	LoadWaybills []int64 `json:"load_waybills"`
 }
 
 const (
@@ -29,29 +27,10 @@ const (
 	test3
 )
 
-func (i *IntString) UnmarshalJSON(value []byte) error {
-	var result string
-	if len(value) == 0 {
-		return nil
-	}
-
-	if strings.Contains(fmt.Sprintf("%s", value), "\"") {
-		result = string(value[1 : len(value)-1])
-	} else {
-		result = string(value)
-	}
-	m, err := strconv.ParseInt(result, 10, 32)
-	if err != nil {
-		return err
-	}
-	*i = IntString(m)
-	return nil
-}
-
 func main() {
 	println(test3)
-	var a int = 90
-	var result = &RequestParams{LoadWaybills: []int{a, 123}}
+	var a int64 = 72059299143909760
+	var result = &RequestParams{LoadWaybills: []int64{a, 123}}
 	b, _ := json.Marshal(result)
 	fmt.Printf("marshal result:%s\n", b)
 	var result2 RequestParam
